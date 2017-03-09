@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "57432299121",
+    "firebase_url": "https://babi-care.firebaseio.com",
+    "project_id": "babi-care",
+    "storage_bucket": "babi-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57432299121:android:e0943e6ef3dbfb38",
+        "android_client_info": {
+          "package_name": "com.fihou.babicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57432299121-oc30v2hc2br3v3o250sqtv395p40678u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOx1vbe9w4-7TUfcyHv6_DaGaHVS3OHZ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

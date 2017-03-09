@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#a64425</color>
+    <color name="colorPrimaryDark">#a64425</color>
+    <color name="colorAccent">#c17e4b</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_white">#1dd2d213</color>
+    <color name="transparent_blue">#8370c2f9</color>
+    <color name="transparent_blue2">#2d495c</color>
+    <color name="transparent_white2">#38ffffff</color>
+    <color name="transparent_white3">#a3ffffff</color>
+    <color name="forget_pass">#3d1c1c</color>
+    <color name="username_hint">#ba8e65</color>
+    <color name="white">#FFFFFF</color>
+    <color name="register_tv">#a3320f</color>
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_log_in_"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/baby_bg"
+    tools:context="com.fihou.babicare.Activitys.LogInActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/transparent_white">
+
+        <RelativeLayout
+            android:layout_width="@dimen/register_layout_width"
+            android:layout_height="@dimen/register_layout_width"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_login_selector"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/edtusername"
+                android:layout_width="@dimen/edt_login_width"
+                android:layout_height="@dimen/edt_login_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/login_edittext_mgt"
+                android:background="@drawable/edt_login_selector"
+                android:drawableLeft="@drawable/bg_account"
+                android:hint="Tên đăng nhập"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/username_hint"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edtpassword"
+                android:layout_width="@dimen/edt_login_width"
+                android:layout_height="@dimen/edt_login_height"
+                android:layout_below="@+id/edtusername"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edt_login_selector"
+                android:drawableLeft="@drawable/bg_icon_password"
+                android:hint="Mật khẩu"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/username_hint"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnlogin"
+                android:layout_width="@dimen/edt_login_width"
+                android:layout_height="@dimen/edt_login_height"
+                android:layout_below="@+id/edtpassword"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_login_selector"
+                android:clickable="true"
+                android:text="Đăng nhập"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/log_in_btnlogin_size" />
+
+            <LinearLayout
+                android:layout_width="@dimen/edt_login_width"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnlogin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvquenMatkhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Quên mật khẩu?"
+                    android:textColor="@color/forget_pass"
+                    android:textSize="17sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/tvDangky"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Đăng ký"
+                    android:textColor="@color/register_tv"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
