@@ -47,6 +47,11 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         btnLogin = (Button) findViewById(R.id.btnlogin);
         tvQuenMatkhau = (TextView) findViewById(R.id.tvquenMatkhau);
         tvDangky = (TextView) findViewById(R.id.tvDangky);
+        loadConfigs();
+    }
+    public void loadConfigs() {
+        service = new StartService(this, StartService.LOAD_CONFIG);
+        service.start();
     }
     private void showProgressBar() {
         progress = new ProgressDialog(LogInActivity.this);

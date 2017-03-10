@@ -36,6 +36,11 @@ public class StartService implements Runnable {
         this.mode = mode;
     }
 
+    public StartService(Context context, int mode) {
+        this.context = context;
+        this.mode = mode;
+    }
+
     @Override
     public void run() {
         try {
@@ -82,6 +87,7 @@ public class StartService implements Runnable {
 //                                Utility.getVersionName(context, Constant.CURRENT_VERSION),
 //                                deviceInfo.toString(),
 //                                facebookLogin, loginType, fullName, referrer));
+                        Log.i("Login","summit");
                         break;
                     case REGIST:
 //                        String referrer1 =  SharePrefrenceUtil.getAppRefer(this.context);
