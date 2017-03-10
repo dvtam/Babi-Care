@@ -15,12 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fihou.babicare.R;
+import com.fihou.babicare.Service.StartService;
 
 public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText edtUsername, edtPassword;
     private Button btnLogin;
     private TextView tvQuenMatkhau, tvDangky;
     ProgressDialog progress;
+    StartService service;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         String txtpass=edtPassword.getText().toString();
         if (edtUsername.getText().length() > 0 && edtPassword.getText().length() > 0) {
             showProgressBar();
+            service = new StartService(LogInActivity.this, txtuser, txtpass, StartService.LOGIN);
+            service.start();
             Intent main=new Intent(LogInActivity.this,MainActivity.class);
             startActivity(main);
             dismisProgress();

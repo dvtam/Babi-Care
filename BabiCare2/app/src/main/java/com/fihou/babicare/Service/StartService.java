@@ -28,6 +28,14 @@ public class StartService implements Runnable {
     private int mode = 0;
     private int loginType;
     private boolean facebookLogin;
+
+    public StartService(Context context, String user, String pass, int mode) {
+        this.context = context;
+        this.user = user;
+        this.pass = pass;
+        this.mode = mode;
+    }
+
     @Override
     public void run() {
         try {
