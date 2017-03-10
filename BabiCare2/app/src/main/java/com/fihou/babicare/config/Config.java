@@ -30,5 +30,6 @@ public class Config {
     public static float DENSITY = 0.75f;
     public static int SCREEN_WIDTH = 320;
     public static int SCREEN_HEIGHT = 240;
-
+    public static String CP = "0";
+    public static String Tag = "BabiCare";
 }
