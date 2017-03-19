@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_log_in_"
     android:layout_width="fill_parent"
@@ -20,6 +21,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/bg_login_selector"
             android:gravity="center">
+
             <EditText
                 android:id="@+id/edtusername"
                 android:layout_width="@dimen/edt_login_width"
@@ -96,4 +98,27 @@
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:indicatorColor="#e64f0e"
+                android:layout_marginBottom="17dp"
+                app:indicatorName="BallPulseIndicator" />
+        </FrameLayout>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

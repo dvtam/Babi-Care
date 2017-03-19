@@ -2,9 +2,9 @@ package com.fihou.babicare.config;
 
 public class Config {
 
-    public static final String host = "192.168.1.183";//192.168.239.1
+    public static final String host = "192.168.239.1";//192.168.239.1
     public static final String clientType = "android";
-    public static final int port = 19191;
+    public static final int port = 8000;
 
     public static final long timeOutReconnect = 60 * 1000;
     public static final long maxTimeOutReconnect = 120 * 1000;
