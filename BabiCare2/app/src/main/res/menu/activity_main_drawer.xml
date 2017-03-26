@@ -3,24 +3,28 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/mnuserinfor"
+            android:icon="@drawable/ic_perm_identity_white_24dp"
+            android:title="Thông tin cá nhân" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/mndoipass"
+            android:icon="@drawable/ic_visibility_off_white_48dp"
+            android:title="Đổi mật khẩu" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/mnchuongtrinh"
+            android:icon="@drawable/ic_dashboard_white_48dp"
+            android:title="Chương trình học" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/mnthucdon"
+            android:icon="@drawable/ic_storage_white_48dp"
+            android:title="Thực đơn" />
+        <item
+            android:id="@+id/mnbe"
+            android:icon="@drawable/ic_accessibility_white_48dp"
+            android:title="Cập nhập bé" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="">
         <menu>
             <item
                 android:id="@+id/nav_share"

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.fihou.babicare.Activitys.UserInfosActivity"
+    tools:showIn="@layout/activity_userinfos">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <FrameLayout
+            android:id="@+id/frm_userinfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin cá nhân"
+                    android:textColor="@color/user_tv" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/user_tv"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Họ và tên" />
+
+                <TextView
+                    android:id="@+id/tvuserfullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đào Văn Tâm"
+                    android:textColor="@color/user_tv"
+                    android:textSize="@dimen/user_name_texts" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Giới tính" />
+
+                <TextView
+                    android:id="@+id/tvusergender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nam"
+                    android:textColor="@color/user_tv"
+                    android:textSize="@dimen/user_name_texts" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Ngày sinh" />
+
+                <TextView
+                    android:id="@+id/tvuserbirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày 01 tháng 04 năm 1995"
+                    android:textColor="@color/user_tv"
+                    android:textSize="@dimen/user_name_texts" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Địa chỉ" />
+
+                <TextView
+                    android:id="@+id/tvuseraddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hà Nội"
+                    android:textColor="@color/user_tv"
+                    android:textSize="@dimen/user_name_texts" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Loại người dùng"
+                    android:textColor="@color/user_tv" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/user_tv"></View>
+
+                <TextView
+                    android:id="@+id/tvuserloai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Quản trị viên"
+                    android:textColor="@color/forget_pass"
+                    android:textSize="@dimen/user_name_texts" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Thông tin liên lạc"
+                    android:textColor="@color/user_tv" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/user_tv"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Địa chỉ email" />
+
+                <TextView
+                    android:id="@+id/tvuseremail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="dvtam95@gmail.com"
+                    android:textColor="@color/user_tv"
+                    android:textSize="@dimen/user_name_texts" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Số điện thoại" />
+
+                <TextView
+                    android:id="@+id/tvuserphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="01688816915"
+                    android:textColor="@color/user_tv"
+                    android:textSize="@dimen/user_name_texts" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frm_edituserinfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edtuserfullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edtuserinfo_h"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="Họ và tên"
+                    android:inputType="textCapWords"
+                    android:paddingLeft="5dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rdusermale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="Nam" />
+
+                    <RadioButton
+                        android:id="@+id/rduserfemale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nữ" />
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/edtuserbirthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edtuserinfo_h"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="Ngày sinh"
+                    android:inputType="date"
+                    android:paddingLeft="5dp" />
+                <EditText
+                    android:id="@+id/edtuseraddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edtuserinfo_h"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="Địa chỉ"
+                    android:inputType="textCapWords"
+                    android:paddingLeft="5dp" />
+                <EditText
+                    android:id="@+id/edtuseremail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edtuserinfo_h"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="Địa chỉ email"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="5dp" />
+                <EditText
+                    android:id="@+id/edtuserphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edtuserinfo_h"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edittext_selector"
+                    android:hint="Số điện thoại"
+                    android:inputType="phone"
+                    android:paddingLeft="5dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:text="Chọn loại người dùng"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/user_tv"
+                    android:layout_height="1px"></View>
+                <Spinner
+                    android:id="@+id/spuserloai"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edittext_selector"
+                    android:layout_height="@dimen/edtuserinfo_h"></Spinner>
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

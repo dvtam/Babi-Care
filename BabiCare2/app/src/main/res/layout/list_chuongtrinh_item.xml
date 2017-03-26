@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/panel_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/transparent_blue"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvtime"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="3dp"
+            android:background="#f7f6e7"
+            android:text="7h-8h"
+            android:gravity="center_vertical"
+            android:textColor="#a78507"
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/tvtime"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#e23c13"></View>
+
+        <TextView
+            android:id="@+id/tvcontent"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/tvtime"
+            android:layout_marginTop="5dp"
+            android:gravity="left|top"
+            android:text="Đưa đón bé"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</FrameLayout>

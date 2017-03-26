@@ -2,7 +2,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bachground2"
+    android:background="@color/white"
     tools:context="com.fihou.babicare.Fragment.MainFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:id="@+id/tvThu"
+                android:text="Hôm nay - thứ 3"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvchudiem"
+                android:text="Chủ điểm: Động vật"
+                android:textSize="20sp"
+                android:textColor="#CCC"
+                android:layout_below="@+id/tvThu"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvchude"
+                android:text="Chủ điề: Những loài vật quen thuộc"
+                android:textSize="20sp"
+                android:textColor="#CCC"
+                android:layout_below="@+id/tvchudiem"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <GridView
+                android:id="@+id/gvChuongtrinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@id/tvchude"
+                android:horizontalSpacing="3dp"
+                android:numColumns="3"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:verticalSpacing="3dp"></GridView>
+
+            <GridView
+                android:id="@+id/gvThucdon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gvChuongtrinh"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:horizontalSpacing="3dp"
+                android:numColumns="3"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:verticalSpacing="3dp"></GridView>
+        </RelativeLayout>
+    </ScrollView>
 
 </FrameLayout>

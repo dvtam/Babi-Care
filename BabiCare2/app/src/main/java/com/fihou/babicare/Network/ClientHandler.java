@@ -18,6 +18,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<String> {
     private Channel channel;
     final Handler handler;
     public static boolean isconnected=false;
+    public static boolean getdata=false;
     public ClientHandler(Handler handler) {
         this.handler = handler;
     }
@@ -43,6 +44,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<String> {
     }
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
+        getdata=true;
         Message message = handler.obtainMessage(0x01);
         message.obj = msg;
         message.sendToTarget();

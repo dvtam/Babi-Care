@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#a64425</color>
-    <color name="colorPrimaryDark">#a64425</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#c17e4b</color>
     <color name="transparent">#00000000</color>
     <color name="transparent_white">#1dd2d213</color>
@@ -13,4 +13,5 @@
     <color name="username_hint">#ba8e65</color>
     <color name="white">#FFFFFF</color>
     <color name="register_tv">#a3320f</color>
+    <color name="user_tv">#944c03</color>
 </resources>

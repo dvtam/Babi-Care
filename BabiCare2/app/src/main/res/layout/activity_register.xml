@@ -15,7 +15,7 @@
 
         <RelativeLayout
             android:layout_width="@dimen/register_layout_width"
-            android:layout_height="@dimen/register_layout_height"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:background="@drawable/bg_login_selector"
             android:gravity="center">
@@ -77,12 +77,21 @@
                 android:paddingLeft="10dp"
                 android:textColorHint="@color/username_hint"
                 android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/btnSignin"
+            <Spinner
+                android:id="@+id/sploainguidung"
                 android:layout_width="@dimen/edt_login_width"
                 android:layout_height="@dimen/edt_login_height"
                 android:layout_below="@+id/edtemail"
+                android:background="@drawable/edt_login_selector"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp">
+            </Spinner>
+
+            <Button
+                android:id="@+id/btnSignup"
+                android:layout_width="@dimen/edt_login_width"
+                android:layout_height="@dimen/edt_login_height"
+                android:layout_below="@+id/sploainguidung"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_login_selector"
@@ -95,7 +104,7 @@
             <LinearLayout
                 android:layout_width="@dimen/edt_login_width"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btnSignin"
+                android:layout_below="@+id/btnSignup"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:gravity="center"

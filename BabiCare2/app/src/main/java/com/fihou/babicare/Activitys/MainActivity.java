@@ -1,5 +1,6 @@
 package com.fihou.babicare.Activitys;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,12 +13,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+import com.fihou.babicare.Data.Save;
+import com.fihou.babicare.DiaLog.PassWordChange;
 import com.fihou.babicare.Fragment.MainFragment;
 import com.fihou.babicare.R;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    TextView tvusername, tvemail;
+    private static boolean isshowfragment = false;
+    PassWordChange passWordChange = new PassWordChange();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +41,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        callFragment(new MainFragment(),"Babi care");
+        View header = navigationView.getHeaderView(0);
+        tvusername = (TextView) header.findViewById(R.id.tvuser);
+        tvemail = (TextView) header.findViewById(R.id.tvemail);
+        tvusername.setText(Save.userInfos.getTentaikhoan());
+        tvemail.setText(Save.userInfos.getEmail());
+        getSupportActionBar().setTitle("Babi care");
     }
+
 
     @Override
     public void onBackPressed() {
@@ -75,18 +88,21 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.mnuserinfor) {
+            Intent userinfo = new Intent(MainActivity.this, UserInfosActivity.class);
+            startActivity(userinfo);
+        } else if (id == R.id.mnchuongtrinh) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.mnthucdon) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.mnbe) {
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.mndoipass) {
+            passWordChange.showDialog(this, Save.userInfos);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -94,12 +110,16 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void callFragment(Fragment fragment, String title) {
-        getSupportActionBar().setTitle(title);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.frameContent, fragment)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .addToBackStack(null)
-                .commit();
-    }
+//    private void callFragment(Fragment fragment, String title) {
+//        getSupportActionBar().setTitle(title);
+//        FragmentManager fm = getSupportFragmentManager();
+//        if (fm.findFragmentById(R.id.frameContent) == null) {
+//            fm.beginTransaction().replace(R.id.frameContent, fragment)
+//                    .setTransition(FragmentTransaction.TRANSIT_NONE)
+//                    .addToBackStack(null)
+//                    .commit();
+//            isshowfragment = true;
+//        }
+//
+//    }
 }

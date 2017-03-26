@@ -8,6 +8,20 @@ public class MessageKey {
     public static final String FAIL = "FAIL";
     public static final String LOGIN = "LOGIN";
     public static final String SIGNUP = "SIGNUP";
+    public static final String SINGUP_SUCCESS = "SINGUP_SUCCESS";
+    public static final String SINGUP_FAIL = "SINGUP_FAIL";
+    public static final String LOADTYPEUSER = "LOADTYPEUSER";
+    public static final String GETSPLAN = "GETSPAN";
+    public static final String GETMENU = "GETMENU";
+    public static final String UPDATEUSER = "UPDATEUSER";
+    public static final String UPDATEFAIL = "UPDATEFAIL";
+    public static final String UPDATEPASS = "UPDATEPASS";
+    public static final String UPDATEPASS_FAIL = "UPDATEPASSFAIL";
+    public static final String GETCHUONGTRINH = "GETCHUONGTRINH";
+    public static final String GETCHUONGTRINH_FAIL = "GETCHUONGTRINH_FAIL";
+
+
+//TAM////////////////////////////////////////////////////////
     public static final String code = "code";
     public static final String isActive = "isActive";
     public static final String uid = "uid";

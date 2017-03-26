@@ -3,4 +3,6 @@
     <dimen name="log_in_btnlogin_size">20sp</dimen>
     <dimen name="register_layout_width">400dp</dimen>
     <dimen name="register_layout_height">430dp</dimen>
+    <dimen name="user_name_texts">20sp</dimen>
+    <dimen name="edtuserinfo_h">40dp</dimen>
 </resources>
