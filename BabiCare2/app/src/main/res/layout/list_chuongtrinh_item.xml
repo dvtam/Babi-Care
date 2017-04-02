@@ -6,37 +6,32 @@
     android:descendantFocusability="blocksDescendants">
 
     <RelativeLayout
+        android:id="@+id/lnitem"
         android:layout_width="match_parent"
-        android:background="@color/transparent_blue"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/tvtime"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="3dp"
-            android:background="#f7f6e7"
-            android:text="7h-8h"
-            android:gravity="center_vertical"
-            android:textColor="#a78507"
-            android:textSize="17sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_below="@id/tvtime"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:background="#e23c13"></View>
+        android:background="@drawable/chuongtrinh_item_selector"
+        android:layout_gravity="center"
+        android:padding="3dp"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tvcontent"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@id/tvtime"
-            android:layout_marginTop="5dp"
-            android:gravity="left|top"
-            android:text="Đưa đón bé"
-            android:textSize="20sp" />
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:gravity="top"
+            android:textColor="#fff"
+            android:text="Đón trẻ đến trường"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvtime"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/tvcontent"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
+            android:textSize="15sp"
+            android:textColor="@color/register_tv"
+            android:text="7h00 - 8h00"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 </FrameLayout>

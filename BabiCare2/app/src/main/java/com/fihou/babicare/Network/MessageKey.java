@@ -19,7 +19,8 @@ public class MessageKey {
     public static final String UPDATEPASS_FAIL = "UPDATEPASSFAIL";
     public static final String GETCHUONGTRINH = "GETCHUONGTRINH";
     public static final String GETCHUONGTRINH_FAIL = "GETCHUONGTRINH_FAIL";
-
+    public static final String GETCHUONGTRINHCHITIET = "GETCHUONGTRINHCHITIET";
+    public static final String FINISH = "FINISH";
 
 //TAM////////////////////////////////////////////////////////
     public static final String code = "code";

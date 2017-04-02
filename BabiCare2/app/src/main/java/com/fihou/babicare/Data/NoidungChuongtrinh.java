@@ -15,6 +15,15 @@ public class NoidungChuongtrinh {
     public NoidungChuongtrinh() {
     }
 
+    public NoidungChuongtrinh(int id, String tieudeamnhac, String naoidungamnhac, String tieudevanhoc, String noidungvanhoc, int idchuongtrinh) {
+        this.id = id;
+        this.tieudeamnhac = tieudeamnhac;
+        this.naoidungamnhac = naoidungamnhac;
+        this.tieudevanhoc = tieudevanhoc;
+        this.noidungvanhoc = noidungvanhoc;
+        this.idchuongtrinh = idchuongtrinh;
+    }
+
     public NoidungChuongtrinh(int id) {
         this.id = id;
     }

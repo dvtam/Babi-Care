@@ -14,4 +14,8 @@
     <color name="white">#FFFFFF</color>
     <color name="register_tv">#a3320f</color>
     <color name="user_tv">#944c03</color>
+    <color name="green">#0a5604</color>
+    <color name="blue">#041a56</color>
+    <color name="yellow">#976706</color>
+    <color name="green2">#032a33</color>
 </resources>

@@ -11,24 +11,33 @@ public class Chuongtrinh {
     private String chudiem;
     private String chude;
     private String ngaybatdau;
-    private String ngsyketthuc;
+    private String ngayketthuc;
     private int idnguoidung;
     private ArrayList<ChitietChuongtrinh> chitietchuongtrinh;
-    private ArrayList<NoidungChuongtrinh> noidungChuongtrinhs;
+
 
     public Chuongtrinh() {
 
     }
 
-    public Chuongtrinh(int id, String chudiem, String chude, String ngaybatdau, String ngsyketthuc, int idnguoidung, ArrayList<ChitietChuongtrinh> chitietchuongtrinh, ArrayList<NoidungChuongtrinh> noidungChuongtrinhs) {
+    public Chuongtrinh(int id, String chudiem, String chude, String ngaybatdau, String ngayketthuc, int idnguoidung) {
         this.id = id;
         this.chudiem = chudiem;
         this.chude = chude;
         this.ngaybatdau = ngaybatdau;
-        this.ngsyketthuc = ngsyketthuc;
+        this.ngayketthuc = ngayketthuc;
+        this.idnguoidung = idnguoidung;
+    }
+
+    public Chuongtrinh(int id, String chudiem, String chude, String ngaybatdau, String ngayketthuc, int idnguoidung, ArrayList<ChitietChuongtrinh> chitietchuongtrinh) {
+        this.id = id;
+        this.chudiem = chudiem;
+        this.chude = chude;
+        this.ngaybatdau = ngaybatdau;
+        this.ngayketthuc = ngayketthuc;
         this.idnguoidung = idnguoidung;
         this.chitietchuongtrinh = chitietchuongtrinh;
-        this.noidungChuongtrinhs = noidungChuongtrinhs;
+
     }
 
     public int getId() {
@@ -63,12 +72,12 @@ public class Chuongtrinh {
         this.ngaybatdau = ngaybatdau;
     }
 
-    public String getNgsyketthuc() {
-        return ngsyketthuc;
+    public String getNgayketthuc() {
+        return ngayketthuc;
     }
 
-    public void setNgsyketthuc(String ngsyketthuc) {
-        this.ngsyketthuc = ngsyketthuc;
+    public void setNgayketthuc(String ngayketthuc) {
+        this.ngayketthuc = ngayketthuc;
     }
 
     public int getIdnguoidung() {
@@ -87,11 +96,4 @@ public class Chuongtrinh {
         this.chitietchuongtrinh = chitietchuongtrinh;
     }
 
-    public ArrayList<NoidungChuongtrinh> getNoidungChuongtrinhs() {
-        return noidungChuongtrinhs;
-    }
-
-    public void setNoidungChuongtrinhs(ArrayList<NoidungChuongtrinh> noidungChuongtrinhs) {
-        this.noidungChuongtrinhs = noidungChuongtrinhs;
-    }
 }

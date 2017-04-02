@@ -38,6 +38,10 @@
         <activity
             android:name=".Activitys.UserInfosActivity"
             android:label="@string/title_activity_user_infos"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activitys.ChuongtrinhActivity"
+            android:label="@string/title_activity_chuongtrinh"
             android:theme="@style/AppTheme"></activity>
     </application>
 

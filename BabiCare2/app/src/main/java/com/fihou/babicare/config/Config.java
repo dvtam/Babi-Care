@@ -3,7 +3,8 @@ package com.fihou.babicare.config;
 public class Config {
 
 //    public static final String host = "192.168.1.230";//192.168.239.1
-    public static final String host = "192.168.239.1";
+    public static final String host = "192.168.43.91";
+//    public static final String host = "192.168.239.1";
     public static final String clientType = "android";
     public static final int port = 8000;
 

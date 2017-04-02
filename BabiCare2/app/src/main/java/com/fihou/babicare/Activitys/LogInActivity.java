@@ -23,6 +23,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fihou.babicare.Data.ChitietChuongtrinh;
+import com.fihou.babicare.Data.Chuongtrinh;
+import com.fihou.babicare.Data.NoidungChuongtrinh;
 import com.fihou.babicare.Data.Save;
 import com.fihou.babicare.Data.TypeUser;
 import com.fihou.babicare.Data.UserInfos;
@@ -42,7 +45,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetSocketAddress;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 import cc.lison.pojo.EchoFile;
@@ -89,6 +97,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     String newpass;
     Intent login;
     UserInfosActivity userInfosActivity;
+    public static ArrayList<ChitietChuongtrinh> listchitiet = new ArrayList<>();
+    public static Chuongtrinh chuongtrinh;
 
     public LogInActivity() {
     }
@@ -117,6 +127,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         });
         sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
         getuser_pass();
+
     }
 
     private void checkConnect() {
@@ -153,8 +164,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         tvDangky = (TextView) findViewById(R.id.tvDangky);
         avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
         registerActivity = new RegisterActivity();
-        userInfosActivity=new UserInfosActivity();
-        login=new Intent(getApplicationContext(),LogInActivity.class);
+        userInfosActivity = new UserInfosActivity();
+        login = new Intent(getApplicationContext(), LogInActivity.class);
     }
 
     public void connect(final Handler handler) {
@@ -238,11 +249,89 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         }
         return arr;
     }
+
     private void dismisProgress() {
         if (progress != null && progress.isShowing() && !isFinishing()) {
             progress.dismiss();
         }
     }
+
+    private String getnameofDay() {
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTime(calendar.getTime());
+
+        String[] days = new String[]{"8", "2", "3", "4", "5", "6", "7"};
+
+        String day = days[calendar.get(Calendar.DAY_OF_WEEK) - 1];
+        return day;
+    }
+
+    private ChitietChuongtrinh getchitietct(String json) {
+
+        ChitietChuongtrinh chitietChuongtrinh = null;
+        if (json != null && json.length() > 0) {
+            try {
+                JSONArray jsonArray = new JSONArray(json);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject object = jsonArray.getJSONObject(i);
+                    JSONObject rs = object.getJSONObject("data");
+                    try {
+                        chitietChuongtrinh = new ChitietChuongtrinh(rs.getInt("id"), rs.getString("thoigian"), rs.getString("thu"), rs.getString("noidung"), rs.getString("tieude"), rs.getString("chude"), rs.getInt("idchuongtrinh"));
+//                        if (listchitiet == null) {
+//                            listchitiet = new ArrayList<>();
+//                        }
+//                        listchitiet.add(chitietChuongtrinh);
+                    } catch (JSONException e) {
+                        chitietChuongtrinh = new ChitietChuongtrinh(rs.getInt("id"), rs.getString("thoigian"), rs.getString("thu"), rs.getString("noidung"), rs.getInt("idchuongtrinh"));
+//                        if (listchitiet == null) {
+//                            listchitiet = new ArrayList<>();
+//                        }
+//                        listchitiet.add(chitietChuongtrinh);
+                    }
+                }
+//                Save.listchitietchuongtrinh = listchitiet;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return chitietChuongtrinh;
+    }
+
+    private Chuongtrinh getChuongtrinh(String json) {
+        Chuongtrinh chuongtrinh = null;
+        ArrayList<ChitietChuongtrinh> listchitiet = new ArrayList<>();
+        ChitietChuongtrinh chitietChuongtrinh = null;
+        if (json != null && json.length() > 0) {
+            try {
+                JSONArray jsonArray = new JSONArray(json);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject object = jsonArray.getJSONObject(i);
+                    JSONObject rs = object.getJSONObject("data");
+//                    JSONArray listctct = rs.getJSONArray("listchitietchuongtrinh");
+//                    for (int j = 0; j < listctct.length(); j++) {
+//                        JSONObject ctct = listctct.getJSONObject(j);
+//
+//                        try {
+//                            chitietChuongtrinh = new ChitietChuongtrinh(ctct.getInt("id"), ctct.getString("thoigian"), ctct.getString("thu"), ctct.getString("noidung"), ctct.getString("tieude"), ctct.getString("chude"), ctct.getInt("idchuongtrinh"));
+//                        } catch (JSONException e) {
+//                            chitietChuongtrinh = new ChitietChuongtrinh(ctct.getInt("id"), ctct.getString("thoigian"), ctct.getString("thu"), ctct.getString("noidung"), ctct.getInt("idchuongtrinh"));
+//                        }
+//                        listchitiet.add(chitietChuongtrinh);
+//                    }
+//                    Save.listchitietchuongtrinh = listchitiet;
+                    chuongtrinh = new Chuongtrinh(rs.getInt("id"), rs.getString("chudiem"), rs.getString("chude"), rs.getString("ngaybatdau"), rs.getString("ngayketthuc"), rs.getInt("idnguoidung"));
+                }
+//                Save.chuongtrinh = chuongtrinh;
+                chuongtrinh = chuongtrinh;
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return chuongtrinh;
+    }
+
     private void getType(String json) {
         ArrayList<TypeUser> listType = new ArrayList<>();
         TypeUser typeUser;
@@ -291,9 +380,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                     switch (Message(m)) {
                         case MessageKey.SUCCESS://Đăng nhập thành công
                             getUserinfos(m);
-                            dialog.hide();
-                            Intent home = new Intent(LogInActivity.this, MainActivity.class);
-                            startActivity(home);
+                            sendReqChuongtrinh();
+
                             break;
                         case MessageKey.FAIL://Đăng nhập thất bại
                             dialog.hide();
@@ -329,6 +417,22 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                             Toast.makeText(getApplicationContext(), "Cập nhật mật khẩu thất bại!", Toast.LENGTH_SHORT).show();
                             break;
                         case MessageKey.GETCHUONGTRINH:
+                            chuongtrinh = new Chuongtrinh();
+                            chuongtrinh = getChuongtrinh(m);
+
+                            break;
+                        case MessageKey.GETCHUONGTRINHCHITIET:
+                            ChitietChuongtrinh chitietChuongtrinh = new ChitietChuongtrinh();
+                            chitietChuongtrinh = getchitietct(m);
+                            listchitiet.add(chitietChuongtrinh);
+                            break;
+                        case MessageKey.FINISH:
+                            dialog.hide();
+                            Intent home = new Intent(LogInActivity.this, MainActivity.class);
+                            startActivity(home);
+                            break;
+                        case MessageKey.GETCHUONGTRINH_FAIL:
+                            Log.i("CHUONGTIRNH", "" + listchitiet.get(0).getNoidung());
                             break;
                     }
                     break;
@@ -469,6 +573,24 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                         }
                     });
                     break;
+                case 0x11:
+                    JSONArray arr = new JSONArray();
+                    JSONObject oject = new JSONObject();
+                    try {
+                        oject.put("to", MessageKey.GETCHUONGTRINH);
+                        oject.put("date", getFirtdayofWeek());
+                        oject.put("thu", "2");//getnameofDay().toString()
+                        arr.put(oject);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    channel.writeAndFlush(arr.toString()).addListener(new ChannelFutureListener() {
+                        @Override
+                        public void operationComplete(ChannelFuture channelFuture) throws Exception {
+                            handler.obtainMessage(0x02).sendToTarget();
+                        }
+                    });
+                    break;
                 default:
                     Toast.makeText(activity, "UNKNOWN MSG: " + m, Toast.LENGTH_SHORT).show();
                     break;
@@ -549,14 +671,17 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         }
         return arr;
     }
-    public  void jumtoLogin(Activity intent){
-        Intent i=new Intent(intent,LogInActivity.class);
+
+    public void jumtoLogin(Activity intent) {
+        Intent i = new Intent(intent, LogInActivity.class);
         startActivity(i);
     }
-    public void updatePassword(String newpass){
-        this.newpass=newpass;
+
+    public void updatePassword(String newpass) {
+        this.newpass = newpass;
         handler.obtainMessage(0x10).sendToTarget();
     }
+
     private JSONArray updateUserpasword(String newpass) {
         JSONArray arr = new JSONArray();
         JSONObject jsonObject = new JSONObject();
@@ -570,8 +695,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             data.put("email", Save.userInfos.getEmail());
             data.put("ngaysinh", Save.userInfos.getNgaysinh());
             data.put("idloai", Save.userInfos.getIdloai());
-            data.put("tentaikhoan",Save.userInfos.getTentaikhoan());
-            data.put("matkhau",newpass);
+            data.put("tentaikhoan", Save.userInfos.getTentaikhoan());
+            data.put("matkhau", newpass);
             jsonObject.put("to", MessageKey.UPDATEPASS);
             jsonObject.put("data", data);
             arr.put(jsonObject);
@@ -582,6 +707,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         }
         return arr;
     }
+
     private JSONArray updateUserinfo(UserInfos userInfos) {
         JSONArray arr = new JSONArray();
         JSONObject jsonObject = new JSONObject();
@@ -595,8 +721,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             data.put("email", userInfos.getEmail());
             data.put("ngaysinh", userInfos.getNgaysinh());
             data.put("idloai", userInfos.getIdloai());
-            data.put("tentaikhoan",Save.userInfos.getTentaikhoan());
-            data.put("matkhau",Save.userInfos.getMatkhau());
+            data.put("tentaikhoan", Save.userInfos.getTentaikhoan());
+            data.put("matkhau", Save.userInfos.getMatkhau());
             jsonObject.put("to", MessageKey.UPDATEUSER);
             jsonObject.put("data", data);
             arr.put(jsonObject);
@@ -607,8 +733,9 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         }
         return arr;
     }
+
     public void editUser(UserInfos userInfos) {
-        this.userInfos=userInfos;
+        this.userInfos = userInfos;
         handler.obtainMessage(0x09).sendToTarget();
     }
 
@@ -628,6 +755,18 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         editor.putString("username", edtUsername.getText().toString());
         editor.putString("password", edtPassword.getText().toString());
         editor.commit();
+    }
+
+    public void sendReqChuongtrinh() {
+        handler.obtainMessage(0x11).sendToTarget();
+    }
+
+    private String getFirtdayofWeek() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String date = simpleDateFormat.format(calendar.getTime());
+        return date;
     }
 
     @Override

@@ -42,7 +42,8 @@ public class Save {
     public static boolean inGame = false;
     public static boolean isForceApp = false;
     public static UserInfos userInfos;
-
+    public static Chuongtrinh chuongtrinh;
+    public static ArrayList<ChitietChuongtrinh> listchitietchuongtrinh;
 
 
 

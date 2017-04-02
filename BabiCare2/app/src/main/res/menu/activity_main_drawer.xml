@@ -22,6 +22,14 @@
             android:id="@+id/mnbe"
             android:icon="@drawable/ic_accessibility_white_48dp"
             android:title="Cập nhập bé" />
+        <item
+            android:id="@+id/mnthongke"
+            android:icon="@drawable/ic_equalizer_white_48dp"
+            android:title="Thống kê" />
+        <item
+            android:id="@+id/mnhinhanh"
+            android:icon="@drawable/ic_camera_white_48dp"
+            android:title="Hình ảnh" />
     </group>
 
     <item android:title="">

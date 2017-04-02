@@ -39,7 +39,7 @@ public class myFirebaseMessagingService extends FirebaseMessagingService {
         //Set large icon
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         float multiplier=metrics.density/3f;//fix icon cho đẹp
-        Bitmap icon = BitmapFactory.decodeResource(getBaseContext().getResources(), R.drawable.ic_chevron_left_black_24dp);
+        Bitmap icon = BitmapFactory.decodeResource(getBaseContext().getResources(), R.drawable.babicare_logo);
         icon=Bitmap.createScaledBitmap(icon, (int)(icon.getWidth()*multiplier), (int)(icon.getHeight()*multiplier), false);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
                 .setAutoCancel(true)
@@ -48,7 +48,7 @@ public class myFirebaseMessagingService extends FirebaseMessagingService {
                 .setSound(defaultsound)
                 .setLargeIcon(icon)
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.ic_chevron_left_black_24dp)
+                .setSmallIcon(R.drawable.babicare_icon)
                 .setContentIntent(pendingIntent);
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(Integer.parseInt(id), builder.build());

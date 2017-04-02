@@ -31,14 +31,10 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        gvChuongtrinh= (GridView) view.findViewById(R.id.gvChuongtrinh);
+        gvChuongtrinh= (GridView) view.findViewById(R.id.lvChuongtrinh);
         gvThucdon= (GridView) view.findViewById(R.id.gvThucdon);
-        listct.add(new ChuongtrinhItem("7h-8h","Đón trẻ tới trường + ăn sáng"));
-        listct.add(new ChuongtrinhItem("7h-8h","Đón trẻ tới trường + ăn sáng"));
-        listct.add(new ChuongtrinhItem("7h-8h","Đón trẻ tới trường + ăn sáng"));
-        listct.add(new ChuongtrinhItem("7h-8h","Đón trẻ tới trường + ăn sáng"));
-        listct.add(new ChuongtrinhItem("7h-8h","Đón trẻ tới trường + ăn sáng"));
-        adapter=new ChuongtrinhAdapter(listct,getContext());
+
+
         gvChuongtrinh.setAdapter(adapter);
         return view;
     }
